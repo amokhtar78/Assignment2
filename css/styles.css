@@ -29,7 +29,7 @@ input[type='checkbox'] + label {
 .femaleColor {
     background-color:AntiqueWhite ;
     margin: auto;
-    width: 55%;
+    width: 50%;
     border: 2px solid pink;
     padding: 10px;
 }
@@ -44,7 +44,7 @@ input[type='checkbox'] + label {
 .stnColor {
     background-color:HoneyDew;
     margin: auto;
-    width: 70%;
+    width: 50%;
     border: 3px solid green;
     padding: 10px;
 }
