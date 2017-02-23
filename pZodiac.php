@@ -21,9 +21,6 @@ if (isset($_GET["gender"])) {
 
 $newPerson = new Person($userName, $dateofBirth, $userGender);
 
-
-
-
 $zodiacArray = array(
     array('sign' => 'capricorn',
         'key' => 0, 'start' => '01-01', 'end' => '01-20'),
@@ -65,9 +62,3 @@ function searchZodiac($array, $date) {
 
 echo "Zodiac is : " . searchZodiac($zodiacArray, $dateofBirth);
 
-if ($userGender == "female") {
-
-    echo '<body style="background-color:Salmon">';
-} else {
-    echo '<body style="background-color:SkyBlue">';
-}

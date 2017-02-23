@@ -28,3 +28,10 @@ input[type='checkbox'], input[type='radio'] {
 input[type='checkbox'] + label {
     display:inline;
 }
+.salmonColor {
+    background-color:Salmon;
+}
+ 
+.skyBlueColor {
+    background-color:SkyBlue;
+}

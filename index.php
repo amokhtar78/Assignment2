@@ -7,12 +7,20 @@
         <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet'>
         <link href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css' rel='stylesheet'>
         <link href='css/styles.css' rel='stylesheet'>
+            
+
     </head>
     <body>
         <p>
-            <?php
+        <?php
             require('pZodiac.php');
+            if ($userGender == "female") {
+                echo '<body class="salmonColor">';
+            } else {
+                echo '<body class="skyBlueColor">';
+            }
             ?>
+
 
         <form action="index.php" method="get">
             <label for='userName'>Enter your name:</label>
@@ -30,9 +38,7 @@
                    value="male">Male<br>
             <input type="submit" class='btn btn-primary btn-sm'>
         </form>
-        <?php
-       
-        ?>
+
     </p>
 </body>
 </html>
