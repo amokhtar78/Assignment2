@@ -20,7 +20,7 @@
             <label for='date'>Date of Birth</label>
             <input type='date' name='date' id="date">
 
-            
+
             <label for='gender'>Select your gender:</label>
             <input type="radio" name="gender" id="gender"
             <?php if (isset($gender) && $gender == "female") echo "checked"; ?>
@@ -31,6 +31,7 @@
             <input type="submit" class='btn btn-primary btn-sm'>
         </form>
         <?php
+        
         ?>
     </p>
 </body>
