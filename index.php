@@ -44,8 +44,10 @@ require_once('pZodiac.php');
         </form>
         
         <div class='alert alert-info'>
-            <?php echo $newPerson->displayName() ?>
-            <?php echo "Zodiac is : " . $newPerson->searchZodiac(); ?> 
+            <?php echo $newPerson->displayName() ?> who is
+            <?php echo $newPerson->displayAge() ?> years old,
+            <?php echo $newPerson->displayHisHer()?>
+            <?php echo "zodiac is : " . $newPerson->searchZodiac(); ?> 
         </div>
     </p>
 </body>
