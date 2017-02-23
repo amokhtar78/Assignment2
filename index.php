@@ -1,5 +1,5 @@
 <?php
-require_once('pZodiac.php');
+require('pZodiac.php');
 ?>
 
 <!DOCTYPE html>
@@ -26,14 +26,12 @@ require_once('pZodiac.php');
     <body>
         <h1>Zodiac Sign Finder</h1>
         <p>
-
-
         <form action="index.php" method="get">
             <label for='userName'>Enter your name:</label>
-            <input type="text" name="userName" id="userName">
+            <input type="text" name="userName" required id="userName" value='<?=$form->prefill('Name')?>'>
+            
             <label for='date'>Date of Birth</label>
-            <input type='date' name='date' id="date">
-
+            <input type='date' name='date' required id="date">
 
             <label for='gender'>Select your gender:</label>
             <input type="radio" name="gender"
@@ -49,9 +47,8 @@ require_once('pZodiac.php');
             <?php echo $newPerson->displayName() ?> who is
             <?php echo $newPerson->displayAge() ?> years old,
             <?php echo $newPerson->displayHisHer() ?> zodiac is : 
-            <strong>  <?php echo $newPerson->searchZodiac(); ?></strong>
+            <strong>  <?php echo $newPerson->displayZodiac(); ?></strong>
         </div>
-
     </p>
 </body>
 </html>

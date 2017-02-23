@@ -16,13 +16,6 @@ class Person {
     private $pName;
     private $pDate;
     private $pGender;
-
-    public function __construct($pName, $pDate, $pGender) {
-        $this->pName = $pName;
-        $this->pDate = $pDate;
-        $this->pGender = $pGender;
-    }
-
     Private $zodiacArray = array(
         array('sign' => "Capricorn ♑", 'start' => '12-22', 'end' => '12-31'),
         array('sign' => "Capricorn ♑", 'start' => '01-01', 'end' => '01-19'),
@@ -37,7 +30,13 @@ class Person {
         array('sign' => "Libra ♎", 'start' => '09-23', 'end' => '10-22'),
         array('sign' => "Scorpio ♏", 'start' => '10-23', 'end' => '11-21'),
         array('sign' => "Sagittarius ♐", 'start' => '11-22', 'end' => '12-21')
-         );
+    );
+
+    public function __construct($pName, $pDate, $pGender) {
+        $this->pName = $pName;
+        $this->pDate = $pDate;
+        $this->pGender = $pGender;
+    }
 
     public function displayName() {
         return $this->pName;
@@ -65,7 +64,7 @@ class Person {
         }
     }
 
-    public function searchZodiac() {
+    public function displayZodiac() {
         $zDate = date("m-d", strtotime($this->pDate));
         foreach ($this->zodiacArray as $key => $val) {
             if ($val['end'] >= $zDate && $val['start'] <= $zDate) {

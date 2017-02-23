@@ -29,8 +29,8 @@ input[type='checkbox'] + label {
 .femaleColor {
     background-color:AntiqueWhite ;
     margin: auto;
-    width: 50%;
-    border: 3px solid green;
+    width: 55%;
+    border: 2px solid pink;
     padding: 10px;
 }
 
@@ -38,17 +38,17 @@ input[type='checkbox'] + label {
     background-color:LightSkyBlue ;
     margin: auto;
     width: 50%;
-    border: 3px solid green;
+    border: 5px solid blue;
     padding: 10px;
 }
 .stnColor {
     background-color:HoneyDew;
     margin: auto;
-    width: 50%;
+    width: 70%;
     border: 3px solid green;
     padding: 10px;
 }
 .alert-info {
-    font-size: 150%;
+    font-size: 120%;
 }
 

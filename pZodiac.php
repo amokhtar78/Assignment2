@@ -3,20 +3,17 @@
 require('Form.php');
 require('Person.php');
 
-if (isset($_GET["userName"])) {
-    $userName = $_GET["userName"];
-} else {
-    $userName = "";
-}
-if (isset($_GET["date"])) {
-    $dateofBirth = $_GET["date"];
-} else {
-    $dateofBirth = "";
-}
-if (isset($_GET["gender"])) {
-    $userGender = $_GET["gender"];
-} else {
-    $userGender = "";
+$form = new DWA\Form($_GET);
+
+if ($form->isSubmitted()) {
+    $userName = $form->get('userName', $default = ''); # String
+    $dateofBirth = $form->get('date', $default = ''); # String
+    $userGender = $form->get('gender', $default = ''); # String
+    $errors = $form->validate(
+            [
+                'userName' => 'required',
+            ]
+    );
 }
 
 $newPerson = new Person($userName, $dateofBirth, $userGender);
