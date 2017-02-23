@@ -5,12 +5,9 @@ body {
 footer {
     margin-top:50px;
 }
-
 .alert, .btn {
     margin-top:10px;
 }
-
-
 label, legend {
     display:block;
     margin-top:20px;
@@ -28,10 +25,10 @@ input[type='checkbox'], input[type='radio'] {
 input[type='checkbox'] + label {
     display:inline;
 }
-.salmonColor {
-    background-color:Salmon;
+.femaleColor {
+    background-color:AntiqueWhite ;
 }
- 
-.skyBlueColor {
-    background-color:SkyBlue;
+
+.maleColor {
+    background-color:LightSkyBlue ;
 }

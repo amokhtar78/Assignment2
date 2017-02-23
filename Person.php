@@ -15,20 +15,21 @@ class Person {
 
     public $pName;
     public $pDate;
-    public $zDate;
     public $pGender;
-    
 
     public function __construct($pName, $pDate, $pGender) {
         $this->pName = $pName;
         $this->pDate = $pDate;
         $this->pGender = $pGender;
     }
-
-   
-
-    public function displayPerson() {
-        return "this $this->pGender is named $this->pName and was born on $this->pDate";
+    public function displayName() {
+         return $this->pName;
+        }
+    public function displayDoB() {
+            return $this->pDate;
+        }
+    public function displayGender() {
+            return $this->pGender;
+        }
     }
-
-}
+    
