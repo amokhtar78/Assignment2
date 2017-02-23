@@ -45,7 +45,7 @@ require_once('pZodiac.php');
         
         <div class='alert alert-info'>
             <?php echo $newPerson->displayName() ?>
-            <?php echo "Zodiac is : " . searchZodiac($zodiacArray, $dateofBirth); ?> 
+            <?php echo "Zodiac is : " . $newPerson->searchZodiac(); ?> 
         </div>
     </p>
 </body>
