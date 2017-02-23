@@ -28,10 +28,10 @@ require('pZodiac.php');
         <p>
         <form action="index.php" method="get">
             <label for='userName'>Enter your name:</label>
-            <input type="text" name="userName" required id="userName" value='<?=$form->prefill('Name')?>'>
-            
+            <input type="text" name="userName" id="userName" value='<?= $form->prefill('Name') ?>'>
+
             <label for='date'>Date of Birth</label>
-            <input type='date' name='date' required id="date">
+            <input type='date' name='date' id="date">
 
             <label for='gender'>Select your gender:</label>
             <input type="radio" name="gender"
@@ -42,13 +42,29 @@ require('pZodiac.php');
                    value="male">Male<br>
             <input type="submit" class='btn btn-primary btn-sm'>
         </form>
+        <?php if ($errors): ?>
 
-        <div class='alert alert-info'>
-            <?php echo $newPerson->displayName() ?> who is
-            <?php echo $newPerson->displayAge() ?> years old,
-            <?php echo $newPerson->displayHisHer() ?> zodiac is : 
-            <strong>  <?php echo $newPerson->displayZodiac(); ?></strong>
-        </div>
+            <div class='alert alert-danger'>
+                <ul>
+                    <?php foreach ($errors as $error): ?>
+                        <li><?= $error ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+
+        <?php elseif ($form->isSubmitted()): ?>
+
+            <div class='alert alert-info'>
+                <?php echo $newPerson->displayName() ?> who is
+                <?php echo $newPerson->displayAge() ?> years old,
+                <?php echo $newPerson->displayHisHer() ?> zodiac is : 
+                <strong>  <?php echo $newPerson->displayZodiac(); ?></strong>
+            </div>
+
+        <?php endif; ?>
+
+
+
     </p>
 </body>
 </html>
