@@ -24,7 +24,8 @@ class Person {
     }
 
     Private $zodiacArray = array(
-        array('sign' => "Capricorn ♑", 'start' => '12-22', 'end' => '01-19'),
+        array('sign' => "Capricorn ♑", 'start' => '12-22', 'end' => '12-31'),
+        array('sign' => "Capricorn ♑", 'start' => '01-01', 'end' => '01-19'),
         array('sign' => "Aquarius ♒", 'start' => '01-20', 'end' => '02-18'),
         array('sign' => "Pisces ♓", 'start' => '02-19', 'end' => '03-20'),
         array('sign' => "Aries ♈", 'start' => '03-21', 'end' => '04-19'),

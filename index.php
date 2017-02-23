@@ -12,19 +12,21 @@ require_once('pZodiac.php');
         <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet'>
         <link href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css' rel='stylesheet'>
         <link href='css/styles.css' rel='stylesheet'>
-
+        <?php
+        if ($newPerson->displayGender() == "female") {
+            echo '<body class="femaleColor">';
+        } elseif ($newPerson->displayGender() == "male") {
+            echo '<body class="maleColor">';
+        } else {
+            echo '<body class="stnColor">';
+        }
+        ?>
 
     </head>
     <body>
         <h1>Zodiac Sign Finder</h1>
         <p>
-            <?php
-            if ($userGender == "female") {
-                echo '<body class="femaleColor">';
-            } else {
-                echo '<body class="maleColor">';
-            }
-            ?>
+
 
         <form action="index.php" method="get">
             <label for='userName'>Enter your name:</label>
@@ -42,13 +44,14 @@ require_once('pZodiac.php');
                    value="male">Male<br>
             <input type="submit" class='btn btn-primary btn-sm'>
         </form>
-        
+
         <div class='alert alert-info'>
             <?php echo $newPerson->displayName() ?> who is
             <?php echo $newPerson->displayAge() ?> years old,
-            <?php echo $newPerson->displayHisHer()?>
-            <?php echo "zodiac is : " . $newPerson->searchZodiac(); ?> 
+            <?php echo $newPerson->displayHisHer() ?> zodiac is : 
+            <strong>  <?php echo $newPerson->searchZodiac(); ?></strong>
         </div>
+
     </p>
 </body>
 </html>
