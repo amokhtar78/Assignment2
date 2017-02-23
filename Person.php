@@ -1,21 +1,18 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 /**
  * Description of Person
- *
- * @author amir
+ * class to hold zodiac data and user info
+ * @author Amir Mokhatr Ali
  */
 class Person {
 
-    private $pName;
-    private $pDate;
-    private $pGender;
+    private $pName; //user name
+    private $pDate; //user DOB
+    private $pGender; //user gender
+    //2D array with zodiac start and end dates
     Private $zodiacArray = array(
         array('sign' => "Capricorn ♑", 'start' => '12-22', 'end' => '12-31'),
         array('sign' => "Capricorn ♑", 'start' => '01-01', 'end' => '01-19'),
@@ -31,31 +28,31 @@ class Person {
         array('sign' => "Scorpio ♏", 'start' => '10-23', 'end' => '11-21'),
         array('sign' => "Sagittarius ♐", 'start' => '11-22', 'end' => '12-21')
     );
-
+// constructor
     public function __construct($pName, $pDate, $pGender) {
         $this->pName = $pName;
         $this->pDate = $pDate;
         $this->pGender = $pGender;
     }
-
+// return user name
     public function displayName() {
         return $this->pName;
     }
-
+//return DoB
     public function displayDoB() {
         return $this->pDate;
     }
-
+//return Gender
     public function displayGender() {
         return $this->pGender;
     }
-
+//calcute and return age
     public function displayAge() {
         $aDate = date("Y", strtotime($this->pDate));
         $aYear = date("Y");
         return $aYear - $aDate;
     }
-
+//return his or her based on gender
     public function displayHisHer() {
         if ($this->pGender == "female") {
             return "her";
@@ -63,7 +60,7 @@ class Person {
             return "his";
         }
     }
-
+// get matching zodiac from array
     public function displayZodiac() {
         $zDate = date("m-d", strtotime($this->pDate));
         foreach ($this->zodiacArray as $key => $val) {

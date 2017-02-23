@@ -1,17 +1,27 @@
+<!DOCTYPE html>
 <?php
 require('pZodiac.php');
 ?>
-
-<!DOCTYPE html>
+<!--
+Amir Mokhatr Ali
+Display file for Zodiac sign searcher
+General design from foobook by Susan Buck
+https://github.com/susanBuck
+-->
 <html>
     <head>
         <title>Zodiac</title>
 
         <meta charset='utf-8'>
-
+        <!--
+        load styles
+        -->
         <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet'>
         <link href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css' rel='stylesheet'>
         <link href='css/styles.css' rel='stylesheet'>
+        <!--
+        change background color depending on gender
+        -->
         <?php
         if ($newPerson->displayGender() == "female") {
             echo '<body class="femaleColor">';
@@ -26,6 +36,9 @@ require('pZodiac.php');
     <body>
         <h1>Zodiac Sign Finder</h1>
         <p>
+            <!--
+            display input form for user name, DoB, and gender
+            -->
         <form action="index.php" method="get">
             <label for='userName'>Enter your name:</label>
             <input type="text" name="userName" id="userName" value='<?= $form->prefill('Name') ?>'>
@@ -40,8 +53,14 @@ require('pZodiac.php');
             <input type="radio" name="gender" id ="gender"
             <?php if (isset($gender) && $gender == "male") echo "checked"; ?>
                    value="male">Male<br>
+            <!--
+            send input to logic file
+            -->
             <input type="submit" class='btn btn-primary btn-sm'>
         </form>
+        <!--
+        check for errors and display proper error msg
+        -->
         <?php if ($errors): ?>
 
             <div class='alert alert-danger'>
@@ -53,7 +72,9 @@ require('pZodiac.php');
             </div>
 
         <?php elseif ($form->isSubmitted()): ?>
-
+            <!--
+            if no errors display Zodiac
+            -->
             <div class='alert alert-info'>
                 <?php echo $newPerson->displayName() ?> who is
                 <?php echo $newPerson->displayAge() ?> years old,
