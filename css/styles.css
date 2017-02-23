@@ -51,4 +51,7 @@ input[type='checkbox'] + label {
 .alert-info {
     font-size: 120%;
 }
-
+.cRequired:after {
+  content:"* Required Field";
+  color:red;
+}

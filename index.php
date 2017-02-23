@@ -38,11 +38,16 @@ https://github.com/susanBuck
     display input form for user name, DoB, and gender
     -->
     <form action="index.php" method="get">
-        <label for='userName'>Enter your name:</label>
-        <input type="text" name="userName" id="userName" value='<?= $form->prefill('Name') ?>'>
+        <div class="cRequired">
+            <label for='userName'>Enter your name:</label>
+            <input type="text" name="userName" id="userName" value='<?=$form->prefill($userName, "eg. Name")?>'>
+        </div>
 
-        <label for='date'>Date of Birth</label>
-        <input type='date' name='date' id="date">
+
+        <div class="cRequired">
+            <label for='date'>Date of Birth</label>
+            <input type='date' name='date' id="date">
+        </div>
 
         <label for='gender'>Select your gender:</label>
         <input type="radio" name="gender"
@@ -74,7 +79,7 @@ https://github.com/susanBuck
         if no errors display Zodiac
         -->
         <div class='alert alert-info'>
-            <?php echo $newPerson->displayName() ?> who is
+            <?=$form->sanitize($userName)?> who is
             <?php echo $newPerson->displayAge() ?> years old,
             <?php echo $newPerson->displayHisHer() ?> zodiac is : 
             <strong>  <?php echo $newPerson->displayZodiac(); ?></strong>
