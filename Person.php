@@ -24,20 +24,19 @@ class Person {
     }
 
     Private $zodiacArray = array(
-        array('sign' => 'Capricorn', 'start' => '01-01', 'end' => '01-20'),
-        array('sign' => 'Pisces', 'start' => '02-20', 'end' => '03-20'),
-        array('sign' => 'Aquarius', 'start' => '01-21', 'end' => '02-19'),
-        array('sign' => 'Aries', 'start' => '03-21', 'end' => '04-20'),
-        array('sign' => 'Taurus', 'start' => '04-21', 'end' => '05-21'),
-        array('sign' => 'Gemini', 'start' => '05-22', 'end' => '06-21'),
-        array('sign' => 'Cancer', 'start' => '06-22', 'end' => '07-22'),
-        array('sign' => 'Leo', 'start' => '07-23', 'end' => '08-23'),
-        array('sign' => 'Virgo', 'start' => '08-24', 'end' => '09-23'),
-        array('sign' => 'Libra', 'start' => '09-24', 'end' => '10-23'),
-        array('sign' => 'Scorpio', 'start' => '10-24', 'end' => '11-22'),
-        array('sign' => 'Sagittarius', 'start' => '11-23', 'end' => '12-21'),
-        array('sign' => 'Capricorn', 'start' => '12-22', 'end' => '12-31')
-    );
+        array('sign' => "Capricorn ♑", 'start' => '12-22', 'end' => '01-19'),
+        array('sign' => "Aquarius ♒", 'start' => '01-20', 'end' => '02-18'),
+        array('sign' => "Pisces ♓", 'start' => '02-19', 'end' => '03-20'),
+        array('sign' => "Aries ♈", 'start' => '03-21', 'end' => '04-19'),
+        array('sign' => "Taurus ♉", 'start' => '04-20', 'end' => '05-20'),
+        array('sign' => "Gemini ♊", 'start' => '05-21', 'end' => '06-20'),
+        array('sign' => "Cancer ♋", 'start' => '06-21', 'end' => '07-22'),
+        array('sign' => "Leo ♌", 'start' => '07-23', 'end' => '08-22'),
+        array('sign' => "Virgo ♍", 'start' => '08-23', 'end' => '09-22'),
+        array('sign' => "Libra ♎", 'start' => '09-23', 'end' => '10-22'),
+        array('sign' => "Scorpio ♏", 'start' => '10-23', 'end' => '11-21'),
+        array('sign' => "Sagittarius ♐", 'start' => '11-22', 'end' => '12-21')
+         );
 
     public function displayName() {
         return $this->pName;
@@ -54,7 +53,7 @@ class Person {
     public function displayAge() {
         $aDate = date("Y", strtotime($this->pDate));
         $aYear = date("Y");
-        return $aYear-$aDate;
+        return $aYear - $aDate;
     }
 
     public function displayHisHer() {
